@@ -105,6 +105,7 @@ LINKS = [
     ("https://mrpaulsagave.netlify.app/", "The agave list"),
     ("https://www.mrpaulssupperclub.com/menu/", "All menus"),
     ("https://www.mrpaulssupperclub.com/", "mrpaulssupperclub.com"),
+    ("https://lnk.bio/CarnivalBar", "All our links"),
 ]
 
 # ------------------------------------------------------------------- css ---
