@@ -23,7 +23,7 @@ DESC = ("Bitters, amari, tawny port and cordials at Mr. Paul's Supper Club in Ed
 # Keep each section alphabetical. Must match ../Aperitif List.md.
 
 SECTIONS = [
-    ("Aperitif", "aperitif", "Before dinner.", "Pour", [
+    ("Aperitif", "aperitif", "", "Pour", [
         ("Aperol", 10, "11%", "Campari Group", "Novi Ligure, Italy",
          "Gentian, rhubarb and cinchona; low-proof aperitivo", "", ""),
         ("Bonal", 9, "16%", "Distillerie Bonal", "Saint-Laurent-du-Pont, France",
@@ -35,7 +35,7 @@ SECTIONS = [
         ("Salers Gentian", 10, "16%", "Distillerie de la Salers", "Auvergne, France",
          "Macerated yellow gentian root, oak-aged", "", ""),
     ]),
-    ("Amaro", "amaro", "After dinner, bitter.", "Pour", [
+    ("Amaro", "amaro", "", "Pour", [
         ("Amargo de Chile", 8, "32%", "CH Distillery", "Chicago, Illinois",
          "Mole spice, chile heat, cocoa and cinnamon", "amargo de chille latin", ""),
         ("Amaro Nonino", 13, "35%", "Nonino Distillatori", "Percoto, Italy",
@@ -59,13 +59,13 @@ SECTIONS = [
         ("Romana Amaro", 12, "35%", "Romana", "Italy",
          "33 Italian botanicals; herbal and bittersweet", "", ""),
     ]),
-    ("Tawny Port", "tawny-port", "Taylor Fladgate, by the glass.", "Glass", [
+    ("Tawny Port", "tawny-port", "", "Glass", [
         ("Taylor Fladgate 10 Year", 12, "20%", "Taylor Fladgate", "Vila Nova de Gaia, Portugal",
          "Cask-aged tawny, a blend averaging ten years", "", ""),
         ("Taylor Fladgate 20 Year", 20, "20%", "Taylor Fladgate", "Vila Nova de Gaia, Portugal",
          "Cask-aged tawny, a blend averaging twenty years", "", ""),
     ]),
-    ("After Dinner", "after-dinner", "Sweeter — cordials, cremes and liqueurs.", "Pour", [
+    ("After Dinner", "after-dinner", "", "Pour", [
         ("Brady's Irish Creme", 10, "17%", "Brady’s", "Derry, Northern Ireland",
          "Dairy cream with Irish whiskey", "bradys", ""),
         ("Chartreuse Green", 18, "55%", "Chartreux Fathers", "Entre-Deux-Guiers, France",
@@ -101,9 +101,9 @@ TAGLINE = ("One to sharpen the appetite, one to settle it. "
            "Everything on this list does one job or the other.")
 
 LINKS = [
+    ("https://mrpaulscarnival.netlify.app/carnival-bar-menus.pdf", "The Carnival Bar menu"),
     ("https://mrpaulswhiskey.netlify.app/", "The whiskey list"),
     ("https://mrpaulsagave.netlify.app/", "The agave list"),
-    ("https://www.mrpaulssupperclub.com/menu/", "All menus"),
     ("https://www.mrpaulssupperclub.com/", "mrpaulssupperclub.com"),
     ("https://lnk.bio/CarnivalBar", "All our links"),
 ]
@@ -230,7 +230,7 @@ body{
 #empty.on{display:block}
 .foot{margin-top:60px;padding-top:26px;border-top:1px solid var(--rule);
   color:var(--muted);font-size:13.5px;line-height:1.75}
-.footmark{width:64px;margin:0 auto 20px;color:var(--copper)}
+.footmark{width:52px;margin:0 auto 20px;color:var(--copper)}
 .footmark svg{display:block;width:100%;height:auto}
 .links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 22px;margin:0}
 .links a{color:var(--paper);text-decoration:none;font-size:11.5px;
@@ -241,12 +241,7 @@ body{
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 """
 
-FOOTMARK = ('<svg viewBox="0 0 120 40" aria-hidden="true" fill="none" stroke="currentColor" '
-            'stroke-width="1.1"><path d="M2 20h34M84 20h34"></path>'
-            '<path d="M60 6c-6 6-9 10-9 14a9 9 0 0 0 18 0c0-4-3-8-9-14z"></path>'
-            '<path d="M60 20v14"></path>'
-            '<path d="M60 27c-4 0-7-2-9-5M60 27c4 0 7-2 9-5"></path>'
-            '<circle cx="44" cy="20" r="2"></circle><circle cx="76" cy="20" r="2"></circle></svg>')
+FOOTMARK = (u'<svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs><mask id="apglass" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64"><rect width="64" height="64" fill="#000"></rect><rect x="18.3" y="18.4" width="20.3" height="3.1" fill="#fff"></rect><path d="M18.4 22.4H45.6A13.6 15.1 0 0 1 18.4 22.4Z" fill="#fff"></path><rect x="30.1" y="36" width="3.8" height="14" fill="#fff"></rect><rect x="23.2" y="49.6" width="17.6" height="3.2" rx="1.6" fill="#fff"></rect><circle cx="43.5" cy="17.9" r="7" fill="#000"></circle><circle cx="43.5" cy="17.9" r="5.9" fill="#fff"></circle><path d="M43.5 17.15L43.5 13.3M44.03 17.37L46.75 14.65M44.25 17.9L48.1 17.9M44.03 18.43L46.75 21.15M43.5 18.65L43.5 22.5M42.97 18.43L40.25 21.15M42.75 17.9L38.9 17.9M42.97 17.37L40.25 14.65" stroke="#000" stroke-width="1" stroke-linecap="round"></path></mask></defs><rect width="64" height="64" fill="currentColor" mask="url(#apglass)"></rect></svg>')
 
 SEARCH_ICON = ('<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle>'
                '<path d="M20 20l-3.6-3.6"></path></svg>')
@@ -316,10 +311,11 @@ def build():
             '  <section class="sec" id="%s">\n'
             '    <header class="sechd"><h2>%s</h2>'
             '<span class="cl ca">ABV</span><span class="cl cb">%s</span></header>\n'
-            '    <p class="blurb">%s</p>\n'
+            '%s'
             '    <ul class="pours">%s</ul>\n'
             '  </section>'
-            % (sid, html.escape(name), html.escape(collabel), html.escape(blurb),
+            % (sid, html.escape(name), html.escape(collabel),
+               ('    <p class="blurb">%s</p>\n' % html.escape(blurb)) if blurb else '',
                "".join(rows)))
 
     links = "".join('<a href="%s">%s</a>' % (u, html.escape(t)) for u, t in LINKS)
