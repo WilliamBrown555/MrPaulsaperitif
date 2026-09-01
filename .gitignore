@@ -1,0 +1,9 @@
+# Python
+__pycache__/
+*.pyc
+
+# Editor / OS / OneDrive noise
+*.bak
+desktop.ini
+Thumbs.db
+.DS_Store
