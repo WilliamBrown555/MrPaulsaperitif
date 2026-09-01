@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Builds ../Amaro Website/index.html — the online Apéritif & Digestif list.
+"""Builds ../Aperitif Website/index.html — the online Apéritif & Digestif list.
 
 One file out, no dependencies, no outside requests. See README.md.
 """
 import html, os, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "..", "Amaro Website", "index.html")
+OUT = os.path.join(HERE, "..", "Aperitif Website", "index.html")
 CREST = open(os.path.join(HERE, "crest.svg"), encoding="utf-8").read().strip()
 
 TITLE = "Mr. Paul's Apéritif &amp; Digestif List"
@@ -20,7 +20,7 @@ DESC = ("Bitters, amari, tawny port and cordials at Mr. Paul's Supper Club in Ed
 #            is unconfirmed. A blank beats a wrong number on a bar menu.
 #   ask    â small copper line under the entry, for house pours where the brand
 #            varies. "" for everything else.
-# Keep each section alphabetical. Must match ../Amaro List.md.
+# Keep each section alphabetical. Must match ../Aperitif List.md.
 
 SECTIONS = [
     ("Aperitif", "aperitif", "Before dinner.", "Pour", [

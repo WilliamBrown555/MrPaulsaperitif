@@ -1,4 +1,4 @@
-# Amaro List
+# Aperitif List
 
 Source list for the amaro / aperitif menu. Pulled from Toast — **Spirits → Liqueurs/Cordials** for most of it, **Wine By the Glass → Dessert Wine** for the tawny — and sorted into four categories.
 
@@ -107,6 +107,6 @@ Gamle Ode Celebration · Gamle Ode Dill · Gamle Ode Holiday
 
 ## Related
 
-- [[Publishing the Amaro List]] — how the online menu is built and deployed
+- [[Publishing the Aperitif List]] — how the online menu is built and deployed
 - [[Spirits Board]] — log changes here
 - [[The Whiskey List]] · [[Agave List]]
